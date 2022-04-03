@@ -54,4 +54,4 @@ You can import your sos_node-installed.7z by extracting the folder inside, renam
 Then you can push the changes to your fork using the git add, commit and push commands.    
   
 
-Once you updated your fork, install it your custom system following default termux install instructions.
+Once you updated your fork, install your custom system following default termux install instructions.
