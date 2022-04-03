@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-yes | rm /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/small -r
+yes | rm /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/sos_node -r
 
 echo '##
-## Plug-in for installing small
+## Plug-in for installing sos_node
 ##
 
-DISTRO_NAME="small https://github.com/stringmanolo/small"
+DISTRO_NAME="sos_node https://github.com/stringmanolo/smallos_node"
 
 # You can override a CPU architecture to let distribution
 # be executed by QEMU (user-mode).
@@ -63,33 +63,33 @@ distro_setup() {
         :
 }
 
-' > /data/data/com.termux/files/usr/etc/proot-distro/small.sh
+' > /data/data/com.termux/files/usr/etc/proot-distro/sos_node.sh
 
-proot-distro remove small;
+proot-distro remove sos_node;
 
-proot-distro install small;
+proot-distro install sos_node;
 
-yes | rm /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/small -r
+yes | rm /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/sos_node -r
 
-cp smallFileSystem /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/small -r;
+cp sos_nodeFileSystem /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/sos_node -r;
 
 # SMALL_COMMAND IS CHECKED INSIDE SHELL TO DECIDE IF TO PRINT MOTD OR NOT 
 echo '#!/usr/bin/env bash
 
 if [[ "$1" ]]; then
- touch /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/small/tmp/.small_command_1;
- proot-distro login small --isolated --fix-low-ports -- /bin/"$@"
- rm /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/small/tmp/.small_command_1;
+ touch /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/sos_node/tmp/.sos_node_command_1;
+ proot-distro login sos_node --isolated --fix-low-ports -- /bin/"$@"
+ rm /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/sos_node/tmp/.sos_node_command_1;
 else
   clear;
-  proot-distro login small --isolated --fix-low-ports
+  proot-distro login sos_node --isolated --fix-low-ports
 fi
-' > "$HOME"/../usr/bin/small;
+' > "$HOME"/../usr/bin/sos_node;
 
-chmod +775 "$HOME"/../usr/bin/small;
+chmod +775 "$HOME"/../usr/bin/sos_node;
 
 echo 'System Ready:
 
-$ small
+$ sos_node
 ' 
 
