@@ -46,6 +46,12 @@ apk add npm
 
 ## Extra
 You can fork this project and export your full distro with all your installed packages, historial of commands, etc. Just use the exportInstalledSos_node.sh script to generate your sos_node-installed.7z file.  
-You can import your sos_node-installed.7z by extracting the folder inside, renaming it to sos_nodeFileSystem.  
-Then you can push the changes to your fork using the git add, commit and push commands.  
+  
+
+You can import your sos_node-installed.7z by extracting the folder inside, renaming it to sos_nodeFileSystem.   
+  
+
+Then you can push the changes to your fork using the git add, commit and push commands.    
+  
+
 Once you updated your fork, install it your custom system following default termux install instructions.
